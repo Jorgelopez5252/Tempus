@@ -7,14 +7,14 @@ const bodyParser = require('body-parser');
 const env = require('dotenv').load();
 const exphbs = require('express-handlebars');
 
-// BodyParser
+// BodyParser (Takes HTTP data from request and creates a js object that can be used through req.body)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Passport
+// Passport 
 app.use(
   session({ secret: 'rHUyjs6RmVOD06OdOTsVAyUUCxVXaWci', resave: true, saveUninitialized: true })
-); // session secret
+); // session secret (Creates encryption for session cookie)
 app.use(passport.initialize());
 app.use(passport.session());
 
