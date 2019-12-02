@@ -4,12 +4,15 @@ const app = express();
 const passport = require('passport');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const logger = require("morgan");
 const env = require('dotenv').load();
 const exphbs = require('express-handlebars');
 
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(logger("dev"));
 
 // Passport
 app.use(
@@ -41,7 +44,7 @@ const models = require('./models');
 app.use(express.static("public"));
 
 // Routes
-const authRoute = require('./controllers/auth.js')(app, passport);
+require('./controllers/auth.js')(app, passport);
 
 // Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
