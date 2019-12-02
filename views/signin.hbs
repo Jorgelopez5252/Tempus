@@ -1,4 +1,4 @@
-<div class="container">
+{{!-- <div class="container">
   <div class="row">
     <div class="col-md">
       <form id="signin" name="signin" method="post" action="signin">
@@ -14,4 +14,38 @@
       </form>
     </div>
   </div>
+</div> --}}
+
+<div class="columns">
+  <div class="column is-4 is-offset-4">
+
+<form id="signin" name="signin" method="post" action="signin">
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input" name="email" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left">
+    <input class="input" name="password" type="password" placeholder="Password">
+    <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control">
+    <button type="submit"class="button is-success">
+      Login
+    </button>
+  </p>
+</div>
+</form>
+    </div>
 </div>
