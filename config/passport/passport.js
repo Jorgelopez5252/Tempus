@@ -36,6 +36,7 @@ module.exports = (passport, user) => {
 
         User.findOne({ where: { email: email } }).then(user => {
           if (user) {
+            console.log("bad password");
             return done(null, false, {
               message: 'That email is already taken'
             });
@@ -45,7 +46,8 @@ module.exports = (passport, user) => {
               email: email,
               password: userPassword,
               firstname: req.body.firstname,
-              lastname: req.body.lastname
+              lastname: req.body.lastname,
+              title: req.body.title
             };
 
             User.create(data).then((newUser, created) => {
