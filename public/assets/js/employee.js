@@ -12,7 +12,7 @@ function employeeTable() {
   data.addColumn('boolean', 'Full Time Employee');
   data.addColumn('string', '');
   data.addRows([
-    [2, 'Mike', 'Trout', 'Manager', {d: 150,  f: '$150'},  {v: 10000, f: '$10,000'}, true, '<i class="fas fa-pencil-alt"></i>'],
+    [2, 'Mike', 'Trout', 'Manager', 150,  10000, true, '<i class="fas fa-pencil-alt"></i>'],
     [3, 'Jim', 'Carey', 'Stocker', {d: 1000,  f: '$1,000'},   {v:8000,   f: '$8,000'},  true, '<i class="fas fa-pencil-alt"></i>'],
     [5, 'Alice', 'Wonderland','Sales Associate', {d: 475,  f: '$475'}, {v: 12500, f: '$12,500'}, true, '<i class="fas fa-pencil-alt"></i>'],
     [7,'Bob', "DaBurger","Cook", {d: 750,  f: '$750'},  {v: 7000,  f: '$7,000'},  true, '<i class="fas fa-pencil-alt"></i>'],
