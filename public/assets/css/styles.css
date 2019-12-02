@@ -1,3 +1,163 @@
 form {
   margin-top: 50px;
 }
+
+/* Blue - #033040
+Yellow - #b88128 */
+
+
+html,body {
+  height: 100%;
+  color: #033040;
+}
+
+.content {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+}
+
+.landing {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:  
+  linear-gradient( to right,rgba(255, 255, 255, 0.1) 20%, rgb(3, 48, 64,.7)100% ), 
+  url("/assets/images/landingImg2.jpg");
+}
+
+.hero.is-primary .title, .hero.is-primary .subtitle {
+    text-align: center;
+    color: white;
+}
+
+.button.is-primary {
+    background-color: #033040;
+}
+
+.navbar-item {
+   color: #033040;
+}
+
+.tabs ul {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  width: 100px;
+  height: 100vh;
+}
+
+
+.box {
+  /* background-color: #161E65; */
+  height: 100vh;
+  padding: .25em;
+  border-radius: 0;
+  
+}
+
+.columns { 
+  margin:0; 
+}
+
+.column {
+  padding-left: 0;
+}
+
+.sidebar {
+  font-size: 20px;
+  color:#033040;
+  vertical-align: middle;
+}
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.level {
+    background-color:#033040;
+}
+
+.title, .subtitle {
+   color: white;
+   margin-bottom: 0;
+}
+
+h1.title {
+    margin-bottom: 0;
+}
+
+.dropdown-trigger>.button {
+    background-color: #2364C0;
+    border: none;
+}
+
+.icon {
+    color: white;
+}
+.sidebar-icon {
+  color: #033040;
+}
+
+.adminBtn {
+    color: white;
+    background-color: white;
+}
+
+.companyName {
+    text-align: center;
+    font-size: 30px;
+}
+
+.pageName{
+    color: white;
+    padding-left: 15px;
+    font-size: 30px;
+}
+
+#appHeader {
+    padding-top: 0;
+    padding-right: 0;
+}
+
+td {
+    font-size: 25px;
+}
+
+.svg-inline--fa.fa-fw {
+    width: 2em;
+    
+}
+
+a.logo {
+    padding: .25rem .25rem;
+  }
+  
+  .navbar-item img {
+      max-height: 3rem;
+  }
+
+  @media (min-width: 1200px) {
+     .content  {
+       max-width: 1200px;
+       align-content: center;
+     }
+  }
+
+  @media (min-width: 1408px) {
+     .content {
+       max-width: 1408px;
+       align-content: center;
+     }
+  }
+
+  @media screen and (min-width: 769px){
+   .hero.is-large .hero-body {
+      padding-bottom: 20rem;
+      padding-top: 6rem;
+   }
+}
+
+
+
