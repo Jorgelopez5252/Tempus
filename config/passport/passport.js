@@ -101,6 +101,7 @@ module.exports = (passport, user) => {
             console.log('Error:', err);
 
             return done(null, false, {
+              //this is a test
               message: 'Something went wrong with your Signin'
             });
           });
