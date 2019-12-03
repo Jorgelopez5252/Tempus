@@ -1,85 +1,17 @@
-{{!-- <div class="container">
-  <div class="row">
-    <div class="col-md">
-      <h2>Congratulations!</h2>
-      <h5>You have logged in successfully.</h5>
-      <a class="btn btn-primary" href="/logout" role="button">Sign Out</a>
-    </div>
+<div class="columns is-multiline is-centered">
+  <div class="column is-6">
+    <div id="chart_div"></div>
+
   </div>
-</div> --}}
+  <div class="column is-6">
+    <div id="piechart_3d"></div>
 
-
-  <div class="container">
-    <div class="columns is-gapless is-multiline is-mobile">
-
-      <div class="column is-2">
-        <div class="box">
-          <div class="column sidebar companyName">Your Company</div>
-          <div class="column sidebar is-vertical-center">
-            <a href="../public/"><i class="fas fa-home fa-lg fa-fw sidebar-icon"></i></a>Dashboard</div>
-          <div class="column sidebar is-vertical-center">
-            <a href="employees.html"><i class="fas fa-users fa-lg fa-fw sidebar-icon"></i></a>Employees</div>
-          <div class="column sidebar is-vertical-center">
-            <a href="empHours.html"><i class="far fa-clock fa-lg fa-fw sidebar-icon"></i></a>Hours</div>
-        </div>
-      </div>
-      <div class="column is-10 container">
-        <div class="columns">
-          <div class="column is-12" id="appHeader">
-            <nav class="level">
-              <!-- Left side -->
-              <div class="level-left">
-                <div class="level-item">
-                  <p class="subtitle is-5 pageName">
-                    Home
-                  </p>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="column pulled-right">
-                  <div class="dropdown is-right">
-                    <div class="dropdown-trigger">
-                      <button class="button" id="adminBtn" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span class="icon"><i class="fas fa-user-circle fa-2x"></i></span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
-                          Settings
-                        </a>
-                        <a href="#" class="dropdown-item is-active">
-                          Profile
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                          Sign Out
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          </nav>
-
-
-        </div>
-        <div class="columns is-multiline is-centered">
-          <div class="column is-6">
-            <div id="chart_div"></div>
-
-          </div>
-          <div class="column is-6">
-            <div id="piechart_3d"></div>
-
-          </div>
-          <div class="column is-10">
-            <div id="curve_chart"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </div>
-  <script src="/assets/js/dashboard.js"></script>
+  <div class="column is-10">
+    <div id="curve_chart"></div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script src="assets/js/dashboard.js"></script>

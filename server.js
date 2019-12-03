@@ -32,7 +32,9 @@ const exphbsConfig = exphbs.create({
   extname: '.hbs'
 });
 
+
 app.engine('hbs', exphbsConfig.engine);
+// app.engine('hbs', exphbsConfig2.engine);
 app.set('view engine', '.hbs');
 
 // Models
@@ -43,6 +45,7 @@ app.use(express.static("public"));
 
 // Routes
 const authRoute = require('./routes/auth.js')(app, passport);
+require("./routes/api-routes")(app);
 
 // Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);

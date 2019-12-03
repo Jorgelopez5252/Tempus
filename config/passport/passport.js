@@ -1,5 +1,5 @@
 //load bcrypt
-const bCrypt = require('bcrypt-nodejs');
+const bCrypt = require('bcryptjs');
 
 module.exports = (passport, user) => {
   const User = user;
@@ -11,7 +11,7 @@ module.exports = (passport, user) => {
 
   // used to deserialize the user
   passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => {
+    User.findByPk(id).then(user => {
       if (user) {
         done(null, user.get());
       } else {
@@ -36,7 +36,6 @@ module.exports = (passport, user) => {
 
         User.findOne({ where: { email: email } }).then(user => {
           if (user) {
-            console.log("bad password");
             return done(null, false, {
               message: 'That email is already taken'
             });

@@ -1,5 +1,4 @@
 module.exports = (app, passport) => {
-  // app.get('/', (req, res) => {
   app.get('/', (req, res) => {
     res.render("index")
   });
@@ -16,6 +15,14 @@ module.exports = (app, passport) => {
     res.render('signin');
   });
 
+  app.get('/employeeTable', (req, res) => {
+    res.render('employeeTable', { layout: 'appMain' });
+  });
+
+  app.get('/hours', (req, res) => {
+    res.render('hours', { layout: 'appMain' });
+  });
+
   app.post(
     '/signup',
     passport.authenticate('local-signup', {
@@ -25,19 +32,20 @@ module.exports = (app, passport) => {
   );
 
   app.get('/home', isLoggedIn, (req, res) => {
-    res.render('home');
+    // res.render('home');
+    res.render('home', { layout: 'appMain' });
   });
 
   app.get('/logout', (req, res) => {
     req.session.destroy(err => {
-      res.redirect('/');
+      res.redirect('/signin');
     });
   });
 
   app.post(
     '/signin',
     passport.authenticate('local-signin', {
-      successRedirect: '/home',
+      successRedirect: ('/home'),
       failureRedirect: '/signup'
     })
   );
