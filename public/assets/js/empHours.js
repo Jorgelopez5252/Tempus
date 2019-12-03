@@ -34,7 +34,7 @@ function employeeHours() {
     var cell = event.target; //get selected cell
     row = selection[0].row;
     col = cell.cellIndex;
-    if (cell.cellIndex >= 3 & cell.cellIndex < 10) {
+    if (cell.cellIndex >= 3 & cell.cellIndex <= 9) {
       cell.contentEditable = true;
     //   cell.addEventListener('blur', checkSalary);
     }
