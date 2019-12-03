@@ -100,6 +100,11 @@ h1.title {
   color: #033040;
 }
 
+.sidebarNav {
+  color: #033040;
+  text-decoration: none;
+}
+
 .adminBtn {
     color: white;
     background-color: white;
