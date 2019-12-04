@@ -6,27 +6,48 @@ dropdown.addEventListener('click', function(event) {
   dropdown.classList.toggle('is-active');
 });
 
-$(".sidebarNav").on("click", function() {
-    if ($(this).text() == "Dashboard") {
-        $("#chart").attr("src", "/assets/js/dashboard.js");
-    }
-    else if ($(this).text() == "Employees") {
-        $("#chart").attr("src", "/assets/js/employee.js");
-    } else if ($(this).text() == "Hours") {
-        $("#chart").attr("src", "/assets/js/empHours.js");
-    } else {
-        alert("There was an error populating the information");
-    }
-        
-    });
- 
 
 getUsers();
 function getUsers() {
     $.get("/api/users", function(data) {
-//    console.log(data);
-      console.log("done");
     });
   }
 
+  getUserHours();
+  function getUserHours() {
+    $.get("/api/userhours", function (data) {
+        //    console.log(data);
+        console.log("done");
+    });
+}
+
+
+  $('#add-employee-btn').on("click", function() {
+      window.location = '/employeeTable/#addEmployee'
+  });
+  
+  $('.close-modal').on("click", function() {
+      window.location = '/employeeTable'
+  });
+
+  if(window.location.href.indexOf('#addEmployee') != -1) {
+    $('#addEmployee').addClass('is-active');
+  }
 })
+
+        // $(".sidebarNav").on("click", function() {
+        //     if ($(this).text() == "Dashboard") {
+        //         window.location = '/Home';
+        //         $(".pageName").text("Dashboard");
+        //     }
+        //     else if ($(this).text() == "Employees") {
+        //         window.location = '/employeeTable';
+        //         $(".pageName").text("Empoloyees");
+        //     } else if ($(this).text() == "Hours") {
+        //         window.location = '/hours'
+        //         $(".pageName").text("Employee Hours");
+        //     } else {
+        //         alert("There was an error populating the information");
+        //     }
+                
+        //     });
