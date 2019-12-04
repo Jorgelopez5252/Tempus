@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "userDB",
     "port": 3306,
     "host": "localhost",
