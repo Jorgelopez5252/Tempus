@@ -1,17 +1,60 @@
-<div class="columns is-multiline is-centered">
-  <div class="column is-6">
-    <div id="chart_div"></div>
+<div class="column is-10 container">
+  <div class="columns">
+    <div class="column is-12" id="appHeader">
+      <nav class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5 pageName">
+              Home
+            </p>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="column pulled-right">
+            <div class="dropdown is-right">
+              <div class="dropdown-trigger">
+                <button class="button" id="adminBtn" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <span class="icon"><i class="fas fa-user-circle fa-2x"></i></span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="#" class="dropdown-item">
+                    Settings
+                  </a>
+                  <a href="#" class="dropdown-item is-active">
+                    Profile
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="/logout" class="dropdown-item">
+                    Sign Out
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="columns is-multiline is-centered">
+    <div class="column is-6">
+      <div id="chart_div"></div>
 
-  </div>
-  <div class="column is-6">
-    <div id="piechart_3d"></div>
+    </div>
+    <div class="column is-6">
+      <div id="piechart_3d"></div>
 
+    </div>
+    <div class="column is-10">
+      <div id="curve_chart"></div>
+    </div>
   </div>
-  <div class="column is-10">
-    <div id="curve_chart"></div>
-  </div>
 </div>
 </div>
 </div>
-</div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="assets/js/dashboard.js"></script>

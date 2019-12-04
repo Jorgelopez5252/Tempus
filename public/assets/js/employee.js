@@ -1,30 +1,70 @@
-google.charts.load('current', {'packages':['table']});
+google.charts.load('current', { 'packages': ['table'] });
 google.charts.setOnLoadCallback(employeeTable);
 
 function employeeTable() {
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'ID');
-  data.addColumn('string', 'First Name');
-  data.addColumn('string', 'Last Name', );
-  data.addColumn('string', 'Title');
-//   data.addColumn('number', 'Sales Today');
-  data.addColumn('number', 'Salary');
-//   data.addColumn('boolean', 'Full Time Employee');
-//   data.addColumn('string', '');
-  data.addRows([
+
+    $.ajax({
+        method: "GET",
+        url: "/api/users"
+    }).then(function (data) {
+
+        const employees = data.map(employee => Object.values(employee));
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'ID');
+        data.addColumn('string', 'First Name');
+        data.addColumn('string', 'Last Name');
+        data.addColumn('string', 'Title');
+        data.addColumn('number', 'Salary');
+        data.addColumn('string', '');
+        //   data.addColumn('number', 'Sales Today');
+        //   data.addColumn('boolean', 'Full Time Employee');
+        //   data.addColumn('string', '');
+        data.addRows(employees);
+        //   data.addRows([
 
 
-    // [2{{id}}, 'Mike', 'Trout', 'Manager', 150,  10000, true, '<i class="fas fa-pencil-alt"></i>'],
-    // [3, 'Jim', 'Carey', 'Stocker', {d: 1000,  f: '$1,000'},   {v:8000,   f: '$8,000'},  true, '<i class="fas fa-pencil-alt"></i>'],
-    // [5, 'Alice', 'Wonderland','Sales Associate', {d: 475,  f: '$475'}, {v: 12500, f: '$12,500'}, true, '<i class="fas fa-pencil-alt"></i>'],
-    // [7,'Bob', "DaBurger","Cook", {d: 750,  f: '$750'},  {v: 7000,  f: '$7,000'},  true, '<i class="fas fa-pencil-alt"></i>'],
-    // [9, 'Tim', "Tim", "Stocker", {d: 1000,  f: '$1,000'},   {v:8000,   f: '$8,000'},  false, '<i class="fas fa-pencil-alt"></i>'],
-    // [11, 'Richard', 'Gear', "Manager", {d: 475,  f: '$475'}, {v: 12500, f: '$12,500'}, true, '<i class="fas fa-pencil-alt"></i>'],
-    // [15, 'Tom', "Ford", "Sales Associate", {d: 750,  f: '$750'},  {v: 7000,  f: '$7,000'},  false, '<i class="fas fa-pencil-alt"></i>']
-  ]);
-  // data.setCell(22, 2, 15, "Fifteen", {style: "font-style:bold; font-size: 30px;"});
-  
-  var table = new google.visualization.Table(document.getElementById('table_div'));
+        data.setColumnProperty(5, "className", "deleteCol has-text-centered");
 
-  table.draw(data, {allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;"});
+        function selectHandler() {
+            var selection = table.getSelection();
+            console.log("Test");
+            if (selection.length === 0) {
+                console.log("Nothing");
+                return;
+            }
+
+            var cell = event.target; //get selected cell
+            rows = selection[0].row;
+            col = cell.cellIndex;
+            rowId = data.getFormattedValue(rows, 0);
+            deleteColumn = data.getFormattedValue(rows, col);
+            console.log(col);
+            console.log(rowId);
+            console.log(deleteColumn);
+
+
+            if (col == 5 && deleteColumn == "X") {
+                console.log("new");
+                // console.log(col);
+                $.ajax({
+                    method: "DELETE",
+                    url: "/api/users/" + rowId,
+                }).then(function (data) {
+                    console.log(data);
+
+                });
+            }
+        }
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        google.visualization.events.addListener(table, 'select', function () {
+            selectHandler(table);
+        });
+
+        var formatter = new google.visualization.ColorFormat();
+        formatter.addRange("A", "Z", 'white', 'red');
+        formatter.format(data, 5);
+
+        table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;" });
+    })
 }

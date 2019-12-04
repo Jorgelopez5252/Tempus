@@ -1,14 +1,145 @@
-<div class="columns is-multiline is-centered">
-    <div class="column">
-        <div class="columns is-multiline is-centered">
-            <div class="column is-11">
-                <div id="table_div"></div>
+<div class="column is-10 container">
+    <div class="columns">
+        <div class="column is-12" id="appHeader">
+            <nav class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <p class="subtitle is-5 pageName">
+                            Employees
+                        </p>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="column pulled-right">
+                        <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                                <button class="button" id="adminBtn" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span class="icon"><i class="fas fa-user-circle fa-2x"></i></span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">
+                                        Settings
+                                    </a>
+                                    <a href="#" class="dropdown-item is-active">
+                                        Profile
+                                    </a>
+                                    <hr class="dropdown-divider">
+                                    <a href="/logout" class="dropdown-item">
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-1 has-text-centered">
+            <button class="button is-success is-medium modal-button " id="add-employee-btn">
+                <span class="icon">
+                    <i class="fas fa-user-plus fa-lg"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="columns is-multiline is-centered">
+        <div class="column">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-11">
+                    <div id="table_div"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>
 </div>
 </div>
+
+<div class="modal" id="addEmployee">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <form id="signup" name="signup" method="post" action="/employeeTable">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Add Employee</p>
+                <button class="delete close-modal" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="text" name="firstname" class="input" placeholder="First Name">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="text" name="lastname" class="input" placeholder="Last Name">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="email" name="email" class="input" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="password" name="password" class="input" id="exampleInputPassword1"
+                                    placeholder="Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="text" name="title" class="input" placeholder="Title">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="text" name="salary" class="input" placeholder="Salary">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" class="button">Sign Up</button>
+                <button class="button close-modal">Cancel</button>
+            </footer>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="/assets/js/employee.js"></script>
