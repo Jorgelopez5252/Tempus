@@ -18,16 +18,40 @@ module.exports = function (app) {
     db.user.findAll({
       attributes:
         [
-          'id',
-          'firstname',
-          'lastname',
-          'title',
-          'salary'
+        'id',
+        'firstname',
+        'lastname',
+        'title',
+        'salary',
+        'delete_string'
         ]
     })
       .then(function (dbUser) {
         res.json(dbUser);
       });
+  });
+
+
+  app.get("/api/posts/:id", function(req, res) {
+    db.user.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
+
+
+    // DELETE route for deleting users
+  app.delete("/api/users/:id", function(req, res) {
+    db.user.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+
   });
 
   app.get("/api/userhours", function (req, res) {
@@ -46,7 +70,7 @@ module.exports = function (app) {
       //     'totalHours'
       //   ]
 
-      attributes: ['userId', 'weekNum', 
+      attributes: ['userId', 'weekNum', 'sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat',
       [sequelize.fn('sum', sequelize.col('sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat')), 'totalHours']],
       group: ['userId'],
       raw: true,
@@ -57,29 +81,22 @@ module.exports = function (app) {
       });
   });
 
-  //   // Get route for returning posts of a specific category
-  //   app.get("/api/posts/category/:category", function(req, res) {
-  //     db.Post.findAll({
-  //       where: {
-  //         category: req.params.category
-  //       }
-  //     })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
 
-  //   // Get route for retrieving a single post
-  //   app.get("/api/posts/:id", function(req, res) {
-  //     db.Post.findOne({
-  //       where: {
-  //         id: req.params.id
-  //       }
-  //     })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
+
+//   // Get route for returning posts of a specific category
+//   app.get("/api/posts/category/:category", function(req, res) {
+//     db.Post.findAll({
+//       where: {
+//         category: req.params.category
+//       }
+//     })
+//       .then(function(dbPost) {
+//         res.json(dbPost);
+//       });
+//   });
+
+  // Get route for retrieving a single post
+  
 
   //   // POST route for saving a new post
   //   app.post("/api/posts", function(req, res) {
@@ -94,17 +111,6 @@ module.exports = function (app) {
   //       });
   //   });
 
-  //   // DELETE route for deleting posts
-  //   app.delete("/api/posts/:id", function(req, res) {
-  //     db.Post.destroy({
-  //       where: {
-  //         id: req.params.id
-  //       }
-  //     })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
 
   //   // PUT route for updating posts
   //   app.put("/api/posts", function(req, res) {

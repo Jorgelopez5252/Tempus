@@ -2,7 +2,6 @@ google.charts.load('current', { 'packages': ['table'] });
 google.charts.setOnLoadCallback(employeeHours);
 
 function employeeHours() {
-
   $.ajax({
     method: "GET",
     url: "/api/userhours"
@@ -13,7 +12,7 @@ function employeeHours() {
     let data = new google.visualization.DataTable();
     data.addColumn('number', 'userId');
     // data.addColumn('string', 'First Name');
-    // data.addColumn('string', 'Last Name', );
+    data.addColumn('number', 'Week', );
     data.addColumn('number', 'Sun');
     data.addColumn('number', 'Mon');
     data.addColumn('number', 'Tues');
@@ -21,31 +20,48 @@ function employeeHours() {
     data.addColumn('number', 'Thur');
     data.addColumn('number', 'Fri');
     data.addColumn('number', 'Sat');
-    data.addColumn('number', 'Total Hours');
+    data.addColumn('string', 'Total Hours');
     // data.addColumn('string', '');
     data.addRows(employees);
-    // data.setCell(22, 2, 15, "Fifteen", {style: "font-style:bold; font-size: 30px;"});
+  // data.setCell(22, 2, 15, "Fifteen", {style: "font-style:bold; font-size: 30px;"});
+  
+  // data.setColumnProperty(12, "className", "deleteCol has-text-centered");
 
-    function selectHandler(table) {
-      let selection = table.getSelection();
-      if (selection.length === 0)
-        return;
+  // function selectHandler() {
+  //   var selection = table.getSelection();
+  //   console.log("Test");
+  //   if (selection.length === 0) {
+  //   console.log("Nothing");
+  //     return;
+  //   }
+    
+  //   var cell = event.target; //get selected cell
+  //   rows = selection[0].row;
+  //   col = cell.cellIndex;
 
-      let cell = event.target; //get selected cell
-      row = selection[0].row;
-      col = cell.cellIndex;
-      if (cell.cellIndex >= 3 & cell.cellIndex <= 9) {
-        cell.contentEditable = true;
-        //   cell.addEventListener('blur', checkSalary);
-      }
-      table.setSelection([]);
-    }
+    
+  //   console.log(rows);
+  //   console.log(data.getFormattedValue(rows, 0));
+  
+  // }
 
-    let table = new google.visualization.Table(document.getElementById('tableHours_div'));
-    google.visualization.events.addListener(table, 'select', function () {
-      selectHandler(table);
-    });
+  
 
-    table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;" });
+
+  
+  var table = new google.visualization.Table(document.getElementById('tableHours_div'));
+  // google.visualization.events.addListener(table, 'select', function() {
+    // selectHandler(table);
+
+    
+    
+    // var formatter = new google.visualization.ColorFormat();
+    // formatter.addRange("A", "Z", 'white', 'red');
+    // formatter.format(data, 12); // Apply formatter to second column
+    
+    table.draw(data, {allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;"});
   });
+
 }
+
+
