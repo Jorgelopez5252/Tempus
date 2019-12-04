@@ -10,12 +10,27 @@ module.exports = (app, passport) => {
   app.get('/signup', (req, res) => {
     res.render('signup');
   });
+  app.get('/employeeTable/#addEmployee', (req, res) => {
+    res.render('employeeTable');
+  });
 
   app.get('/signin', (req, res) => {
     res.render('signin');
   });
 
+  app.get('/pricing', (req, res) => {
+    res.render('pricing');
+  });
+
+  // app.get('/employeeTable', (req, res) => {
+  //   res.render('employeeTable', { layout: 'appMain' });
+  // });
+
   app.get('/employeeTable', (req, res) => {
+    res.render('employeeTable', { layout: 'appMain' });
+  });
+
+  app.delete('/employeeTable', (req, res) => {
     res.render('employeeTable', { layout: 'appMain' });
   });
 
@@ -24,15 +39,14 @@ module.exports = (app, passport) => {
   });
 
   app.post(
-    '/signup',
+    '/employeeTable',
     passport.authenticate('local-signup', {
-      successRedirect: '/home',
-      failureRedirect: '/signup'
+      successRedirect: '/employeeTable',
+      failureRedirect: '/home'
     })
   );
 
   app.get('/home', isLoggedIn, (req, res) => {
-    // res.render('home');
     res.render('home', { layout: 'appMain' });
   });
 

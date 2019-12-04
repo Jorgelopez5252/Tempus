@@ -1,12 +1,52 @@
-<div class="columns is-multiline is-centered">
-    <div class="column">
-        <div class="columns is-multiline is-centered">
-            <div class="column is-11">
-                <div id="tableHours_div"></div>
+<div class="column is-10 container">
+    <div class="columns">
+        <div class="column is-12" id="appHeader">
+            <nav class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <p class="subtitle is-5 pageName">
+                            Employee Hours
+                        </p>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="column pulled-right">
+                        <div class="dropdown is-right">
+                            <div class="dropdown-trigger">
+                                <button class="button" id="adminBtn" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span class="icon"><i class="fas fa-user-circle fa-2x"></i></span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a href="#" class="dropdown-item">
+                                        Settings
+                                    </a>
+                                    <a href="#" class="dropdown-item is-active">
+                                        Profile
+                                    </a>
+                                    <hr class="dropdown-divider">
+                                    <a href="/logout" class="dropdown-item">
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="columns is-multiline is-centered">
+        <div class="column">
+            <div class="columns is-multiline is-centered">
+                <div class="column is-11">
+                    <div id="tableHours_div"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 </div>

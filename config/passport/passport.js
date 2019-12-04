@@ -15,7 +15,8 @@ module.exports = (passport, user) => {
       if (user) {
         done(null, user.get());
       } else {
-        done(user.errors, null);
+        // done(errors, null);
+        done("error", null);
       }
     });
   });
@@ -46,7 +47,8 @@ module.exports = (passport, user) => {
               password: userPassword,
               firstname: req.body.firstname,
               lastname: req.body.lastname,
-              title: req.body.title
+              title: req.body.title,
+              salary: req.body.salary
             };
 
             User.create(data).then((newUser, created) => {
