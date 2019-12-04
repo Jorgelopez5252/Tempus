@@ -1,11 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
-  var User = sequelize.define('user', {
+  let User = sequelize.define('user', {
     id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
     firstname: { type: Sequelize.STRING, notEmpty: true },
     lastname: { type: Sequelize.STRING, notEmpty: true },
     username: { type: Sequelize.TEXT },
-    title: { type: Sequelize.STRING},
-    department: { type: Sequelize.STRING},
+    title: { type: Sequelize.STRING },
+    department: { type: Sequelize.STRING },
     salary: { type: Sequelize.INTEGER },
     about: { type: Sequelize.TEXT },
     email: { type: Sequelize.STRING, validate: { isEmail: true } },
