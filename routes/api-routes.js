@@ -6,7 +6,8 @@
 // =============================================================
 
 // Requiring our Todo model
-var db = require("../models");
+const db = require("../models");
+const sequelize = require("sequelize");
 
 // Routes
 // =============================================================
@@ -21,13 +22,66 @@ module.exports = function(app) {
         'firstname',
         'lastname',
         'title',
-        'salary'
+        'salary',
+        'delete_string'
         ]
     })
       .then(function(dbUser) {
         res.json(dbUser);
       });
   });
+
+
+  app.get("/api/posts/:id", function(req, res) {
+    db.user.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
+
+
+    // DELETE route for deleting users
+  app.delete("/api/users/:id", function(req, res) {
+    db.user.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+
+  });
+
+  app.get("/api/userhours", function (req, res) {
+    db.userHours.findAll({
+      // attributes:
+      //   [
+      //     'userId',
+      //     'weekNum',
+      //     'sun',
+      //     'mon',
+      //     'tues',
+      //     'wed',
+      //     'thur',
+      //     'fri',
+      //     'sat',
+      //     'totalHours'
+      //   ]
+
+      attributes: ['userId', 'weekNum', 'sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat',
+      [sequelize.fn('sum', sequelize.col('sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat')), 'totalHours']],
+      group: ['userId'],
+      raw: true,
+      order: sequelize.literal('totalHours DESC')
+    })
+      .then(function (dbUserHours) {
+        res.json(dbUserHours);
+      });
+  });
+
+
 
 //   // Get route for returning posts of a specific category
 //   app.get("/api/posts/category/:category", function(req, res) {
@@ -41,17 +95,8 @@ module.exports = function(app) {
 //       });
 //   });
 
-//   // Get route for retrieving a single post
-//   app.get("/api/posts/:id", function(req, res) {
-//     db.Post.findOne({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
+  // Get route for retrieving a single post
+  
 
 //   // POST route for saving a new post
 //   app.post("/api/posts", function(req, res) {
@@ -66,17 +111,7 @@ module.exports = function(app) {
 //       });
 //   });
 
-//   // DELETE route for deleting posts
-//   app.delete("/api/posts/:id", function(req, res) {
-//     db.Post.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//       .then(function(dbPost) {
-//         res.json(dbPost);
-//       });
-//   });
+
 
 //   // PUT route for updating posts
 //   app.put("/api/posts", function(req, res) {
