@@ -1,22 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="./../public/assets/css/contact.css">
+</head>
+
+<body>
+  <div class="content">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="/">
+          <img src="/assets/images/Logo2.png" width="175" height="100px">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-size-5">
+            Features
+          </a>
+
+          <a class="navbar-item is-size-5">
+            Pricing
+          </a>
+          <a class="navbar-item is-size-5">
+            Contact Us
+          </a>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="/signin" class="button is-primary is-size-6">
+                  <strong>Log in</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <section class="section">
+    <div class="container is-fluid">
+<h1>Dont be a stranger <br> just say hello!</h1>
+<p>You're not going to hit a ridiculously long phone menu when you call us. Your email isn't going to the inbox abyss, never to be seen or heard from again. At <strong>Tempus Werx</strong>, we provide the exceptional service we'd want to experience ourselves!</p>
     </div>
-  </section>
-  </body>
+
+
+
+
+
+
+
+<!-- ////////////////////////////////////////////////////// -->
+<!-- this is where the contact us page starts -->
+<!-- ///////////////////////////////////////////////////// -->
+      <div class="container is-fluid">
+        <h1 class="title">
+          Contact Us!
+        </h1>
+        <hr>
+        <h3 class="subtitle">
+          Lets' do something amazing together!
+        </h3>
+        <br>
+        <div class="columns">
+          <div class="column">
+            <input class="input is-rounded" type="text" placeholder=" Your Name">
+          </div>
+          <div class="column">
+            <input class="input is-rounded" type="text" placeholder="Your Email">
+          </div>
+          <div class="column">
+            <input class="input is-rounded" type="text" placeholder="Your Phone/Cell Number">
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <input class="input is-rounded" type="text" placeholder="Subject of your Message">
+          </div>
+        </div>
+        
+        <div class="columns">
+          <div class="column">
+            <textarea class="textarea" placeholder="Your Message"></textarea>
+          </div>
+        </div>
+        <button class="button is-primary">Send</button>
+      </div>
+    </section>
+
+
+</body>
+
 </html>
