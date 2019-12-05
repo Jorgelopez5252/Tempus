@@ -211,11 +211,12 @@ a.logo {
   } */
   
   .pricing-table{ 
-      display: flex
-    align-items: stretch
-    flex-direction: row
-    flex-flow: row wrap
-    justify-content: space-between
+      display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
   }
   
   .pricing-plan{
@@ -225,6 +226,7 @@ a.logo {
       border-radius: initial;
       margin: 0;
       text-align: center;
+      
       
   }
   
@@ -238,6 +240,7 @@ a.logo {
       background-color: #eaece5;
       border: solid white 5px;
       padding: 5px;
+      font-family: 'Work Sans', sans-serif;
   }
 
   #starter{
@@ -272,6 +275,10 @@ background-color: #4040a1;
 color: white;
 }
 
+.title {
+  font-family: 'Quicksand', sans-serif;
+}
+
   /* /////contact styles//// */
   .sectionContact{
     background-color:white;  
@@ -283,6 +290,11 @@ color: white;
       border: solid 60px rgb(155, 82, 56);
       margin: auto;
       border-radius: 30px ;
+  }
+
+  #pText {
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
   }
 
  
