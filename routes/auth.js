@@ -53,6 +53,13 @@ module.exports = (app, passport) => {
       failureRedirect: '/home'
     })
   );
+  app.post(
+    '/signup',
+    passport.authenticate('local-signup', {
+      successRedirect: '/home',
+      failureRedirect: '/signup'
+    })
+  );
 
   app.get('/home', isLoggedIn, (req, res) => {
     res.render('home', { layout: 'appMain' });

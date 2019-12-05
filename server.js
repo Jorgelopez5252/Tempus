@@ -54,7 +54,7 @@ require('./config/passport/passport.js')(passport, models.user);
 models.sequelize
   .sync()
   .then(function() {
-    console.log('Database Connected');
+    console.log('Dat abase Connected');
 
     app.listen(3000, function(err) {
       if (!err) console.log('Connected at http://localhost:3000');
