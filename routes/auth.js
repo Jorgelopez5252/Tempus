@@ -22,6 +22,14 @@ module.exports = (app, passport) => {
     res.render('pricing');
   });
 
+  app.get('/features', (req, res) => {
+    res.render('features');
+  });
+
+  app.get('/contact', (req, res) => {
+    res.render('contact');
+  });
+
   // app.get('/employeeTable', (req, res) => {
   //   res.render('employeeTable', { layout: 'appMain' });
   // });
@@ -43,6 +51,13 @@ module.exports = (app, passport) => {
     passport.authenticate('local-signup', {
       successRedirect: '/employeeTable',
       failureRedirect: '/home'
+    })
+  );
+  app.post(
+    '/signup',
+    passport.authenticate('local-signup', {
+      successRedirect: '/home',
+      failureRedirect: '/signup'
     })
   );
 

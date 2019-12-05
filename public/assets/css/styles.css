@@ -100,7 +100,7 @@ h1.title {
     color: white;
 }
 .sidebar-icon {
-  color: #033040;
+  color: #033040#033040;
 }
 
 .sidebarNav {
@@ -108,9 +108,9 @@ h1.title {
   text-decoration: none;
 }
 
-.adminBtn {
+#adminBtn {
     color: white;
-    background-color: white;
+    background-color: #033040;
 }
 
 .companyName {
@@ -134,8 +134,19 @@ td {
     font-size: 22px;
 }
 
+.sideNav:hover {
+  background-color: lightblue;
+}
+
+.fa-user-circle {
+  background-color: #033040;
+  color:white;
+  font-size: 40px;
+}
+
 .svg-inline--fa.fa-fw {
     width: 2em;
+    
     
 }
 
@@ -153,6 +164,21 @@ a.logo {
 
   form>div.columns>div.column {
     padding: 5px 20px;
+  }
+
+  .headerRow {
+    background-color: #033040;
+ 
+  }
+
+  .headerCell {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  table {
+    border: 2px solid #033040;
   }
 
   @media (min-width: 1200px) {

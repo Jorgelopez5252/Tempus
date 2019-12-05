@@ -1,11 +1,10 @@
 $(document).ready(function(){
   
-var dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', function(event) {
-  event.stopPropagation();
-  dropdown.classList.toggle('is-active');
-});
-
+    var dropdown = document.querySelector('.dropdown');
+    $(".dropdown").on('click', function(event) {
+      event.stopPropagation();
+      dropdown.classList.toggle('is-active');
+    });
 
 getUsers();
 function getUsers() {
@@ -16,7 +15,6 @@ function getUsers() {
   getUserHours();
   function getUserHours() {
     $.get("/api/userhours", function (data) {
-        //    console.log(data);
         console.log("done");
     });
 }
@@ -24,6 +22,10 @@ function getUsers() {
 
   $('#add-employee-btn').on("click", function() {
       window.location = '/employeeTable/#addEmployee'
+  });
+
+  $('.deleteCol').on("click", function() {
+      window.location = '/employeeTable'
   });
   
   $('.close-modal').on("click", function() {
@@ -35,19 +37,8 @@ function getUsers() {
   }
 })
 
-        // $(".sidebarNav").on("click", function() {
-        //     if ($(this).text() == "Dashboard") {
-        //         window.location = '/Home';
-        //         $(".pageName").text("Dashboard");
-        //     }
-        //     else if ($(this).text() == "Employees") {
-        //         window.location = '/employeeTable';
-        //         $(".pageName").text("Empoloyees");
-        //     } else if ($(this).text() == "Hours") {
-        //         window.location = '/hours'
-        //         $(".pageName").text("Employee Hours");
-        //     } else {
-        //         alert("There was an error populating the information");
-        //     }
-                
-        //     });
+
+// $.put("/api/userhours", function (data) {
+//     console.log("JSfile");
+// })
+
