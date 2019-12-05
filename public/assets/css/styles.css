@@ -111,15 +111,9 @@ h1.title {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-.adminBtn {
-  color: white;
-  background-color: white;
-=======
 #adminBtn {
-    color: white;
-    background-color: #033040;
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
+  color: white;
+  background-color: #033040;
 }
 
 .companyName {
@@ -149,18 +143,12 @@ td {
 
 .fa-user-circle {
   background-color: #033040;
-  color:white;
+  color: white;
   font-size: 40px;
 }
 
 .svg-inline--fa.fa-fw {
-<<<<<<< HEAD
   width: 2em;
-=======
-    width: 2em;
-    
-    
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 }
 
 a.logo {
@@ -179,57 +167,27 @@ form > div.columns > div.column {
   padding: 5px 20px;
 }
 
-<<<<<<< HEAD
-@media (min-width: 1200px) {
-  .content {
-    max-width: 1200px;
-    align-content: center;
-=======
-  .headerRow {
-    background-color: #033040;
- 
-  }
-
-  .headerCell {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  table {
-    border: 2px solid #033040;
-  }
-
-  @media (min-width: 1200px) {
-     .content  {
-       max-width: 1200px;
-       align-content: center;
-     }
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
-  }
+.headerRow {
+  background-color: #033040;
 }
 
-@media (min-width: 1408px) {
-  .content {
-    max-width: 1408px;
-    align-content: center;
-  }
+.headerCell {
+  color: white;
+  font-size: 18px;
+  text-align: center;
 }
 
-@media screen and (min-width: 769px) {
-  .hero.is-large .hero-body {
-    padding-bottom: 20rem;
-    padding-top: 6rem;
-  }
+table {
+  border: 2px solid #033040;
 }
+
 
 /* ///////pricing stlyes//////// */
 
 /* .section{
   background-color: rgb(236, 236, 236);   
   } */
-<<<<<<< HEAD
-
+  
 .pricing-table {
   display: flex;
   align-items: stretch;
@@ -251,41 +209,14 @@ form > div.columns > div.column {
   color: black;
   outline-style: solid;
 }
-=======
-  
-  .pricing-table{ 
-      display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    
-  }
-  
-  .pricing-plan{
-      outline-style: solid; 
-      margin: 25px 50px 60px 100px;
-      border-style: round;
-      border-radius: initial;
-      margin: 0;
-      text-align: center;
-      
-      
-  }
-  
-  .plan-header{
+
+.plan-items {
   color: black;
-  outline-style: solid; 
-  }
-  
-  .plan-items{
-      color: black;
-      background-color: #eaece5;
-      border: solid white 5px;
-      padding: 5px;
-      font-family: 'Work Sans', sans-serif;
-  }
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
+  background-color: #eaece5;
+  border: solid white 5px;
+  padding: 5px;
+  font-family: "Work Sans", sans-serif;
+}
 
 .plan-items {
   color: black;
@@ -326,40 +257,43 @@ form > div.columns > div.column {
   color: white;
 }
 
-<<<<<<< HEAD
+.title {
+  font-family: "Quicksand", sans-serif;
+}
+
 /* /////contact styles//// */
 .sectionContact {
   background-color: white;
 }
-=======
-.title {
-  font-family: 'Quicksand', sans-serif;
-}
-
-  /* /////contact styles//// */
-  .sectionContact{
-    background-color:white;  
-    
-    }
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 
 /* ////features styles//// */
 .image {
-  border: solid 60px rgb(155, 82, 56);
+  border: solid 5px #b88128;
   margin: auto;
-  border-radius: 30px;
 }
 
-<<<<<<< HEAD
-.titleFeature {
-  background-color: white;
-  color: rgb(155, 82, 56);
+#pText {
+  font-size: 30px;
+  font-family: "Quicksand", sans-serif;
 }
-=======
-  #pText {
-    font-size: 30px;
-    font-family: 'Quicksand', sans-serif;
+
+@media (min-width: 1200px) {
+  .content {
+    max-width: 1200px;
+    align-content: center;
   }
+}
 
- 
->>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
+@media (min-width: 1408px) {
+  .content {
+    max-width: 1408px;
+    align-content: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hero.is-large .hero-body {
+    padding-bottom: 20rem;
+    padding-top: 6rem;
+  }
+}
