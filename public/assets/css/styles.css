@@ -189,8 +189,7 @@ form > div.columns > div.column {
        max-width: 1200px;
        align-content: center;
      }
-  }
-}
+  };
 
 @media (min-width: 1408px) {
   .content {
