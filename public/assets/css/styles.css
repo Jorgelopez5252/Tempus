@@ -1,8 +1,8 @@
 /* Blue - #033040
 Yellow - #b88128 */
 
-
-html,body {
+html,
+body {
   height: 100%;
   color: #033040;
 }
@@ -12,36 +12,38 @@ html,body {
   text-align: center;
   vertical-align: middle;
   /* background-color: red !important; */
-
 }
 .content {
-    flex-grow: 1;
-    margin: 0 auto;
-    position: relative;
-    width: auto;
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
 }
 
 .landing {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image:  
-  linear-gradient( to right,rgba(255, 255, 255, 0.1) 20%, rgb(3, 48, 64,.7)100% ), 
-  url("/assets/images/landingImg2.jpg");
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgb(3, 48, 64, 0.7) 100%
+    ),
+    url("/assets/images/landingImg2.jpg");
 }
 
-.hero.is-primary .title, .hero.is-primary .subtitle, .hero-body {
-    text-align: center;
-    color: white;
-    
-    
+.hero.is-primary .title,
+.hero.is-primary .subtitle,
+.hero-body {
+  text-align: center;
+  color: white;
 }
 
 .button.is-primary {
-    background-color: #033040;
+  background-color: #033040;
 }
 
 .navbar-item {
-   color: #033040;
+  color: #033040;
 }
 
 .tabs ul {
@@ -51,17 +53,15 @@ html,body {
   height: 100vh;
 }
 
-
 .box {
   /* background-color: #161E65; */
   height: 100vh;
-  padding: .25em;
+  padding: 0.25em;
   border-radius: 0;
-  
 }
 
-.columns { 
-  margin:0; 
+.columns {
+  margin: 0;
 }
 
 .column {
@@ -70,7 +70,7 @@ html,body {
 
 .sidebar {
   font-size: 20px;
-  color:#033040;
+  color: #033040;
   vertical-align: middle;
 }
 
@@ -81,25 +81,26 @@ html,body {
 }
 
 .level {
-    background-color:#033040;
+  background-color: #033040;
 }
 
-.title, .subtitle {
-   color: white;
-   margin-bottom: 0;
+.title,
+.subtitle {
+  color: white;
+  margin-bottom: 0;
 }
 
 h1.title {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-.dropdown-trigger>.button {
-    background-color: #2364C0;
-    border: none;
+.dropdown-trigger > .button {
+  background-color: #2364c0;
+  border: none;
 }
 
 .icon {
-    color: white;
+  color: white;
 }
 .sidebar-icon {
   color: #033040#033040;
@@ -110,30 +111,36 @@ h1.title {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
+.adminBtn {
+  color: white;
+  background-color: white;
+=======
 #adminBtn {
     color: white;
     background-color: #033040;
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 }
 
 .companyName {
-    text-align: center;
-    font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 
-.pageName{
-    color: white;
-    padding-left: 15px;
-    font-size: 30px;
+.pageName {
+  color: white;
+  padding-left: 15px;
+  font-size: 30px;
 }
 
 #appHeader {
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
 td {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .sideNav:hover {
@@ -147,27 +154,37 @@ td {
 }
 
 .svg-inline--fa.fa-fw {
+<<<<<<< HEAD
+  width: 2em;
+=======
     width: 2em;
     
     
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 }
 
 a.logo {
-    padding: .25rem .25rem;
-  }
-  
-  .navbar-item img {
-      max-height: 3rem;
-  }
+  padding: 0.25rem 0.25rem;
+}
 
-  form {
-    margin-top: 0;
-  }
+.navbar-item img {
+  max-height: 3rem;
+}
 
-  form>div.columns>div.column {
-    padding: 5px 20px;
-  }
+form {
+  margin-top: 0;
+}
 
+form > div.columns > div.column {
+  padding: 5px 20px;
+}
+
+<<<<<<< HEAD
+@media (min-width: 1200px) {
+  .content {
+    max-width: 1200px;
+    align-content: center;
+=======
   .headerRow {
     background-color: #033040;
  
@@ -188,20 +205,22 @@ a.logo {
        max-width: 1200px;
        align-content: center;
      }
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
   }
+}
 
-  @media (min-width: 1408px) {
-     .content {
-       max-width: 1408px;
-       align-content: center;
-     }
+@media (min-width: 1408px) {
+  .content {
+    max-width: 1408px;
+    align-content: center;
   }
+}
 
-  @media screen and (min-width: 769px){
-   .hero.is-large .hero-body {
-      padding-bottom: 20rem;
-      padding-top: 6rem;
-   }
+@media screen and (min-width: 769px) {
+  .hero.is-large .hero-body {
+    padding-bottom: 20rem;
+    padding-top: 6rem;
+  }
 }
 
 /* ///////pricing stlyes//////// */
@@ -209,13 +228,38 @@ a.logo {
 /* .section{
   background-color: rgb(236, 236, 236);   
   } */
+<<<<<<< HEAD
+
+.pricing-table {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.pricing-plan {
+  outline-style: solid;
+  margin: 25px 50px 60px 100px;
+  border-style: round;
+  border-radius: initial;
+  margin: 0;
+  text-align: center;
+}
+
+.plan-header {
+  color: black;
+  outline-style: solid;
+}
+=======
   
   .pricing-table{ 
-      display: flex
-    align-items: stretch
-    flex-direction: row
-    flex-flow: row wrap
-    justify-content: space-between
+      display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
   }
   
   .pricing-plan{
@@ -225,6 +269,7 @@ a.logo {
       border-radius: initial;
       margin: 0;
       text-align: center;
+      
       
   }
   
@@ -238,14 +283,23 @@ a.logo {
       background-color: #eaece5;
       border: solid white 5px;
       padding: 5px;
+      font-family: 'Work Sans', sans-serif;
   }
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 
-  #starter{
-    font-size: 45px;
-  }
+.plan-items {
+  color: black;
+  background-color: #eaece5;
+  border: solid white 5px;
+  padding: 5px;
+}
 
-#startups{
-  color:#80ced6;
+#starter {
+  font-size: 45px;
+}
+
+#startups {
+  color: #80ced6;
   font-size: 45px;
 }
 
@@ -262,14 +316,24 @@ a.logo {
   background-color: #f18973;
 }
 
-#enterprise{
+#enterprise {
   color: #4040a1;
   font-size: 45px;
 }
 
 #enterpriseButton {
-background-color: #4040a1;
-color: white;
+  background-color: #4040a1;
+  color: white;
+}
+
+<<<<<<< HEAD
+/* /////contact styles//// */
+.sectionContact {
+  background-color: white;
+}
+=======
+.title {
+  font-family: 'Quicksand', sans-serif;
 }
 
   /* /////contact styles//// */
@@ -277,12 +341,25 @@ color: white;
     background-color:white;  
     
     }
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
 
-    /* ////features styles//// */
-    .image{
-      border: solid 60px rgb(155, 82, 56);
-      margin: auto;
-      border-radius: 30px ;
+/* ////features styles//// */
+.image {
+  border: solid 60px rgb(155, 82, 56);
+  margin: auto;
+  border-radius: 30px;
+}
+
+<<<<<<< HEAD
+.titleFeature {
+  background-color: white;
+  color: rgb(155, 82, 56);
+}
+=======
+  #pText {
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
   }
 
  
+>>>>>>> fa7005a4b52a5eee59466cfc7e2bff338561e565
