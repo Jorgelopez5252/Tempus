@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         getUserHours();
         function getUserHours() {
-            $.get("/api/userhours", function (data) {
+            $.get("/api/userHours", function (data) {
                 //    console.log(data);
                 console.log("done");
             });

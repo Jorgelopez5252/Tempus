@@ -4,15 +4,17 @@ google.charts.setOnLoadCallback(employeeHours);
 function employeeHours() {
   $.ajax({
     method: "GET",
-    url: "/api/userhours"
+    url: "/api/userHours"
   }).then(function (employeeData) {
-    const employees = employeeData.map(employee => Object.values(employee));
+    const employees = employeeData.map(employee => [employee.id, employee.user.firstname, employee.weekNum, employee.sun,employee.mon, employee.tues, employee.wed, employee.thur, employee.fri, employee.sat, totalHours = employee.sun + employee.mon + employee.tues + employee.wed + employee.thur + employee.fri + employee.sat]);
+    // console.log(employees[0][13].id)
+    // Object.values(employee))
     console.log(employees);
 
     let data = new google.visualization.DataTable();
-    data.addColumn('number', 'userId');
-    // data.addColumn('string', 'First Name');
-    data.addColumn('number', 'Week', );
+    data.addColumn('number', 'User ID');
+    data.addColumn('string', 'Name');
+    data.addColumn('number', 'Week');
     data.addColumn('number', 'Sun');
     data.addColumn('number', 'Mon');
     data.addColumn('number', 'Tues');
@@ -20,46 +22,47 @@ function employeeHours() {
     data.addColumn('number', 'Thur');
     data.addColumn('number', 'Fri');
     data.addColumn('number', 'Sat');
-    data.addColumn('string', 'Total Hours');
+    data.addColumn('number', 'Total Hours');
     // data.addColumn('string', '');
     data.addRows(employees);
-  // data.setCell(22, 2, 15, "Fifteen", {style: "font-style:bold; font-size: 30px;"});
-  
-  // data.setColumnProperty(12, "className", "deleteCol has-text-centered");
+    // data.setCell(22, 2, 15, "Fifteen", {style: "font-style:bold; font-size: 30px;"});
 
-  // function selectHandler() {
-  //   var selection = table.getSelection();
-  //   console.log("Test");
-  //   if (selection.length === 0) {
-  //   console.log("Nothing");
-  //     return;
-  //   }
-    
-  //   var cell = event.target; //get selected cell
-  //   rows = selection[0].row;
-  //   col = cell.cellIndex;
+    // data.setColumnProperty(12, "className", "deleteCol has-text-centered");
 
-    
-  //   console.log(rows);
-  //   console.log(data.getFormattedValue(rows, 0));
-  
-  // }
+    function selectHandler() {
+      var selection = table.getSelection();
+      console.log("Test");
+      if (selection.length === 0) {
+      console.log("Nothing");
+        return;
+      }
 
-  
+      var cell = event.target; //get selected cell
+      rows = selection[0].row;
+      col = cell.cellIndex;
 
 
-  
-  var table = new google.visualization.Table(document.getElementById('tableHours_div'));
-  // google.visualization.events.addListener(table, 'select', function() {
-    // selectHandler(table);
+      console.log(rows);
+      console.log(data.getFormattedValue(rows, 0));
 
-    
-    
-    // var formatter = new google.visualization.ColorFormat();
-    // formatter.addRange("A", "Z", 'white', 'red');
-    // formatter.format(data, 12); // Apply formatter to second column
-    
-    table.draw(data, {allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;"});
+    }
+
+
+
+
+
+    var table = new google.visualization.Table(document.getElementById('tableHours_div'));
+    google.visualization.events.addListener(table, 'select', function () {
+      selectHandler(table)
+    });
+
+
+
+    var formatter = new google.visualization.ColorFormat();
+    formatter.addRange("A", "Z", 'white', 'red');
+    formatter.format(data, 10); // Apply formatter to second column
+
+    table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;" });
   });
 
 }

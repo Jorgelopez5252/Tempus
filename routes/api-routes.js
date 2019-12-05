@@ -7,7 +7,7 @@
 
 // Requiring our Todo model
 const db = require("../models");
-const sequelize = require("sequelize");
+// const sequelize = require("sequelize");
 
 // Routes
 // =============================================================
@@ -15,24 +15,39 @@ module.exports = function (app) {
 
   // GET route for getting all of the posts
   app.get("/api/users", function (req, res) {
+
+    let query = {};
+    console.log(req.query.id)
+
+    if (req.query.id) {
+      query.id = req.query.id;
+    }
+
     db.user.findAll({
-      attributes:
-        [
-        'id',
-        'firstname',
-        'lastname',
-        'title',
-        'salary',
-        'delete_string'
-        ]
+      // attributes:
+      //   [
+      //   'id',
+      //   'firstname',
+      //   'lastname',
+      //   'title',
+      //   'salary',
+      //   'delete_string'
+      //   ]
+
+      where: query,
+      include: [{
+        model: db.userHours
+      }]
+
     })
       .then(function (dbUser) {
         res.json(dbUser);
+        // console.log(dbUser);
       });
   });
 
 
-  app.get("/api/posts/:id", function(req, res) {
+  app.get("/api/userHours/:id", function(req, res) {
     db.user.findOne({
       where: {
         id: req.params.id
@@ -54,30 +69,26 @@ module.exports = function (app) {
 
   });
 
-  app.get("/api/userhours", function (req, res) {
+  app.get("/api/userHours", function (req, res) {
+    
     db.userHours.findAll({
-      // attributes:
-      //   [
-      //     'userId',
-      //     'weekNum',
-      //     'sun',
-      //     'mon',
-      //     'tues',
-      //     'wed',
-      //     'thur',
-      //     'fri',
-      //     'sat',
-      //     'totalHours'
-      //   ]
-
-      attributes: ['userId', 'weekNum', 'sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat',
-      [sequelize.fn('sum', sequelize.col('sun', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat')), 'totalHours']],
-      group: ['userId'],
-      raw: true,
-      order: sequelize.literal('totalHours DESC')
+      attribute: [
+        "id",
+        "weekNum",
+        "sun",
+        "mon",
+        "tues",
+        "wed",
+        "thur",
+        "fri",
+        "sat",
+        "totalHours"
+      ],
+      include: [db.user]
     })
       .then(function (dbUserHours) {
         res.json(dbUserHours);
+        // console.log(dbUserHours);
       });
   });
 
