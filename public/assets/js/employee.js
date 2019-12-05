@@ -7,12 +7,14 @@ function employeeTable() {
         method: "GET",
         url: "/api/users"
     }).then(function (data) {
-
-        const employees = data.map(employee => Object.values(employee));
+        const employees = data.map(employee => 
+            [employee.id, `${employee.firstname} ${employee.lastname}`, employee.title, employee.salary, "X"]
+        );
+        // const employees = data.map(employee => Object.values(employee));
+        console.log(employees);
         var data = new google.visualization.DataTable();
         data.addColumn('number', 'ID');
-        data.addColumn('string', 'First Name');
-        data.addColumn('string', 'Last Name');
+        data.addColumn('string', 'Name');
         data.addColumn('string', 'Title');
         data.addColumn('number', 'Salary');
         data.addColumn('string', '');
@@ -23,7 +25,7 @@ function employeeTable() {
         //   data.addRows([
 
 
-        data.setColumnProperty(5, "className", "deleteCol has-text-centered");
+        data.setColumnProperty(4, "className", "deleteCol has-text-centered");
 
         function selectHandler() {
             var selection = table.getSelection();
@@ -43,18 +45,29 @@ function employeeTable() {
             console.log(deleteColumn);
 
 
-            if (col == 5 && deleteColumn == "X") {
+            if (col == 4 && deleteColumn == "X") {
                 console.log("new");
                 // console.log(col);
                 $.ajax({
                     method: "DELETE",
                     url: "/api/users/" + rowId,
                 }).then(function (data) {
-                    console.log(data);
-
+                    
                 });
+                window.location = "/employeeTable";
             }
         }
+
+        var cssClassNames = {
+            'headerRow': 'headerRow',
+            'tableRow': '',
+            'oddTableRow': 'beige-background',
+            'selectedTableRow': 'orange-background large-font',
+            'hoverTableRow': '',
+            'headerCell': 'headerCell has-text-centered',
+            'tableCell': '',
+            'rowNumberCell': 'underline-blue-font'};
+            
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
         google.visualization.events.addListener(table, 'select', function () {
@@ -63,8 +76,8 @@ function employeeTable() {
 
         var formatter = new google.visualization.ColorFormat();
         formatter.addRange("A", "Z", 'white', 'red');
-        formatter.format(data, 5);
+        formatter.format(data, 4);
 
-        table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;" });
+        table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;", 'cssClassNames': cssClassNames });
     })
 }
