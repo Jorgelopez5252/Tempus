@@ -11,6 +11,7 @@ const db = require("../models");
 
 // Routes
 // =============================================================
+<<<<<<< HEAD
 module.exports = function (app) {
 
   // GET route for getting all of the posts
@@ -23,6 +24,17 @@ module.exports = function (app) {
       query.id = req.query.id;
     }
 
+=======
+module.exports = function(app) {;
+
+  // GET route for getting all of the posts
+  app.get("/api/users", function(req, res) {
+    let query = {};
+    console.log(req.query.id)
+    if (req.query.id) {
+      query.id = req.query.id;
+    }
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
     db.user.findAll({
       // attributes:
       //   [
@@ -33,12 +45,18 @@ module.exports = function (app) {
       //   'salary',
       //   'delete_string'
       //   ]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
       where: query,
       include: [{
         model: db.userHours
       }]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
     })
       .then(function (dbUser) {
         res.json(dbUser);
@@ -47,6 +65,7 @@ module.exports = function (app) {
   });
 
 
+<<<<<<< HEAD
   app.get("/api/userHours/:id", function(req, res) {
     db.user.findOne({
       where: {
@@ -57,6 +76,18 @@ module.exports = function (app) {
         res.json(dbUser);
       });
   });
+=======
+  // app.get("/api/posts/:id", function(req, res) {
+  //   db.user.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(function(dbUser) {
+  //       res.json(dbUser);
+  //     });
+  // });
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
 
 
     // DELETE route for deleting users
@@ -66,10 +97,13 @@ module.exports = function (app) {
         id: req.params.id
       }
     })
-
   });
 
+<<<<<<< HEAD
   app.get("/api/userHours", function (req, res) {
+=======
+  app.get("/api/userhours", function (req, res) {
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
     
     db.userHours.findAll({
       attribute: [
@@ -109,6 +143,7 @@ module.exports = function (app) {
   // Get route for retrieving a single post
   
 
+<<<<<<< HEAD
   //   // POST route for saving a new post
   //   app.post("/api/posts", function(req, res) {
   //     console.log(req.body);
@@ -135,4 +170,39 @@ module.exports = function (app) {
   //         res.json(dbPost);
   //       });
   //   });
+=======
+  // // POST route for saving a new post
+  // app.post("/api/userhours/:id", function(req, res) {
+  //   console.log(req.body);
+  //   // db.userHours.update({
+  //   //   sun: req.body.sun,
+  //   //   mon: req.body.mon,
+  //   //   tues: req.body.tues,
+  //   //   wed: req.body.wed,
+  //   //   thur: req.body.thur,
+  //   //   fri: req.body.fri,
+  //   //   sat: req.body.sat,
+  //   // })
+  //   //   .then(function(dbPost) {
+  //   //     res.json(dbPost);
+  //   //   });
+  // });
+
+
+
+  // PUT route for updating posts
+  app.put("/api/userhours/:id", function(req, res) {
+    db.userHours.update(req.body,
+      {
+        where: {
+          userId: req.params.id,
+        }
+      }
+      )
+      .then(function(dbUserHours) {
+        res.json(dbUserHours);
+      });
+  });
+>>>>>>> 81405888953f753327dc1d1f467950aa696ea15a
 };
+

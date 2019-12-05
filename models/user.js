@@ -13,8 +13,8 @@ module.exports = (sequelize, Sequelize) => {
     password: { type: Sequelize.STRING, allowNull: false },
     last_login: { type: Sequelize.DATE },
     status: {
-      type: Sequelize.ENUM('active', 'inactive'),
-      defaultValue: 'active'
+      type: Sequelize.ENUM("active", "inactive"),
+      defaultValue: "active"
     }
   });
 
@@ -24,3 +24,13 @@ module.exports = (sequelize, Sequelize) => {
 
   return User;
 };
+
+
+// module.exports = (sequelize, Sequelize) => {
+//   var UserHours = sequelize.define("userHours", {
+//     id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
+//     firstname: { type: Sequelize.STRING, notEmpty: true },
+//     lastname: { type: Sequelize.STRING, notEmpty: true },
+//     hours: { type: Sequelize.INTEGER },
+//   });
+// };

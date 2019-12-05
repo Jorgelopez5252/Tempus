@@ -11,21 +11,24 @@
  // draws it.
  function pieChart() {
 
-   // Create the data table.
-   var data = new google.visualization.DataTable();
-   data.addColumn('string', 'Topping');
-   data.addColumn('number', 'Slices');
-   data.addRows([
-     ['Mushrooms', 3],
-     ['Onions', 1],
-     ['Olives', 1],
-     ['Zucchini', 1],
-     ['Pepperoni', 2]
-   ]);
+  $.ajax({
+    method: "GET",
+    url: "/api/userHours"
+  }).then(function (employeeData) {
+    const employees = employeeData.map(employee => [`${employee.user.firstname} ${employee.user.lastname}`,  totalHours = employee.sun + employee.mon + employee.tues + employee.wed + employee.thur + employee.fri + employee.sat
+    ]);
+ 
+    let data = new google.visualization.DataTable();
+    data.addColumn('string', 'Name');
+    data.addColumn('number', 'Total Hours by Employee');
+
+    data.addRows(employees);
+
 
    // Set chart options
    var options = {
-     'title': 'How Much Pizza I Ate Last Night',
+    is3D: true,
+     'title': 'Total Hours',
      'width': 600,
      'height': 400
    };
@@ -33,7 +36,8 @@
    // Instantiate and draw our chart, passing in some options.
    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
    chart.draw(data, options);
- }
+ })
+}
 
 
  function donutChart() {
@@ -51,6 +55,7 @@
       is3D: true,
       'width': 600,
       'height': 400,
+      animation:{"startup": true},
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

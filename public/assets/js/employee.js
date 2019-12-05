@@ -15,8 +15,6 @@ function employeeTable() {
         var data = new google.visualization.DataTable();
         data.addColumn('number', 'ID');
         data.addColumn('string', 'Name');
-        // data.addColumn('string', 'First Name');
-        // data.addColumn('string', 'Last Name');
         data.addColumn('string', 'Title');
         data.addColumn('number', 'Salary');
         data.addColumn('string', '');
@@ -47,33 +45,29 @@ function employeeTable() {
             console.log(deleteColumn);
 
 
-            if (col == 5 && deleteColumn == "X") {
+            if (col == 4 && deleteColumn == "X") {
                 console.log("new");
                 // console.log(col);
                 $.ajax({
                     method: "DELETE",
                     url: "/api/users/" + rowId,
                 }).then(function (data) {
-                    console.log(data);
-
+                    
                 });
+                window.location = "/employeeTable";
             }
         }
 
-        function selectHandler(table) {
-            var selection = table.getSelection();
-            if (selection.length === 0)
-                return;
-
-            var cell = event.target; //get selected cell
-            row = selection[0].row;
-            col = cell.cellIndex;
-            if (cell.cellIndex >= 3 & cell.cellIndex <= 9) {
-                cell.contentEditable = true;
-                //   cell.addEventListener('blur', checkSalary);
-            }
-            table.setSelection([]);
-        }
+        var cssClassNames = {
+            'headerRow': 'headerRow',
+            'tableRow': '',
+            'oddTableRow': 'beige-background',
+            'selectedTableRow': 'orange-background large-font',
+            'hoverTableRow': '',
+            'headerCell': 'headerCell has-text-centered',
+            'tableCell': '',
+            'rowNumberCell': 'underline-blue-font'};
+            
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
         google.visualization.events.addListener(table, 'select', function () {
@@ -84,6 +78,6 @@ function employeeTable() {
         formatter.addRange("A", "Z", 'white', 'red');
         formatter.format(data, 4);
 
-        table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;" });
+        table.draw(data, { allowHtml: true, width: '100%', height: '150%', style: "font-style:bold; font-size: 30px;", 'cssClassNames': cssClassNames });
     })
 }
