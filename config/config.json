@@ -2,6 +2,8 @@
   "development": {
     "username": "root",
     "password": "Tony1738",
+=======
+    "password": "root",
     "database": "userDB",
     "port": 3306,
     "host": "localhost",
