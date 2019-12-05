@@ -51,7 +51,7 @@
     ]);
 
     var options = {
-      title: 'My Daily Activities',
+      title: 'Employee Performance',
       is3D: true,
       'width': 600,
       'height': 400,
