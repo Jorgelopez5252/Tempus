@@ -112,8 +112,8 @@ h1.title {
 }
 
 #adminBtn {
-    color: white;
-    background-color: #033040;
+  color: white;
+  background-color: #033040;
 }
 
 .companyName {
@@ -143,14 +143,12 @@ td {
 
 .fa-user-circle {
   background-color: #033040;
-  color:white;
+  color: white;
   font-size: 40px;
 }
 
 .svg-inline--fa.fa-fw {
-    width: 2em;
-    
-    
+  width: 2em;
 }
 
 a.logo {
@@ -169,41 +167,20 @@ form > div.columns > div.column {
   padding: 5px 20px;
 }
 
-  .headerRow {
-    background-color: #033040;
- 
-  }
-
-  .headerCell {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  table {
-    border: 2px solid #033040;
-  }
-
-  @media (min-width: 1200px) {
-     .content  {
-       max-width: 1200px;
-       align-content: center;
-     }
-  };
-
-@media (min-width: 1408px) {
-  .content {
-    max-width: 1408px;
-    align-content: center;
-  }
+.headerRow {
+  background-color: #033040;
 }
 
-@media screen and (min-width: 769px) {
-  .hero.is-large .hero-body {
-    padding-bottom: 20rem;
-    padding-top: 6rem;
-  }
+.headerCell {
+  color: white;
+  font-size: 18px;
+  text-align: center;
 }
+
+table {
+  border: 2px solid #033040;
+}
+
 
 /* ///////pricing stlyes//////// */
 
@@ -211,38 +188,35 @@ form > div.columns > div.column {
   background-color: rgb(236, 236, 236);   
   } */
   
-  .pricing-table{ 
-      display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    
-  }
-  
-  .pricing-plan{
-      outline-style: solid; 
-      margin: 25px 50px 60px 100px;
-      border-style: round;
-      border-radius: initial;
-      margin: 0;
-      text-align: center;
-      
-      
-  }
-  
-  .plan-header{
+.pricing-table {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.pricing-plan {
+  outline-style: solid;
+  margin: 25px 50px 60px 100px;
+  border-style: round;
+  border-radius: initial;
+  margin: 0;
+  text-align: center;
+}
+
+.plan-header {
   color: black;
-  outline-style: solid; 
-  }
-  
-  .plan-items{
-      color: black;
-      background-color: #eaece5;
-      border: solid white 5px;
-      padding: 5px;
-      font-family: 'Work Sans', sans-serif;
-  }
+  outline-style: solid;
+}
+
+.plan-items {
+  color: black;
+  background-color: #eaece5;
+  border: solid white 5px;
+  padding: 5px;
+  font-family: "Work Sans", sans-serif;
+}
 
 .plan-items {
   color: black;
@@ -284,25 +258,42 @@ form > div.columns > div.column {
 }
 
 .title {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
-  /* /////contact styles//// */
-  .sectionContact{
-    background-color:white;  
-    
-    }
+/* /////contact styles//// */
+.sectionContact {
+  background-color: white;
+}
 
 /* ////features styles//// */
 .image {
-  border: solid 60px rgb(155, 82, 56);
+  border: solid 5px #b88128;
   margin: auto;
-  border-radius: 30px;
 }
 
-  #pText {
-    font-size: 30px;
-    font-family: 'Quicksand', sans-serif;
-  }
+#pText {
+  font-size: 30px;
+  font-family: "Quicksand", sans-serif;
+}
 
- 
+@media (min-width: 1200px) {
+  .content {
+    max-width: 1200px;
+    align-content: center;
+  }
+}
+
+@media (min-width: 1408px) {
+  .content {
+    max-width: 1408px;
+    align-content: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hero.is-large .hero-body {
+    padding-bottom: 20rem;
+    padding-top: 6rem;
+  }
+}
