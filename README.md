@@ -20,17 +20,17 @@ This project is designed to keep track of Employee Data for any scale of busines
 ​Phone Landing page ------------------- Phone Results page
 
 Main page
-![Image](assets/images/phone_landing.jpg)
+![Image](public/assets/images/Capture1.PNG)
 ​
 
 
 Pricing Page
-![Image](assets/images/c2c-landing.jpg)
+![Image](public/assets/images/Capture2.PNG)
 ​
 
 
 Contact US
-![Image](assets/images/c2c-results.jpg)
+![Image](public/assets/images/Capture3.PNG)
 ​
 ### Link
 Check it out! 
